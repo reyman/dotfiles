@@ -54,7 +54,18 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 # User configuration
-  
+
+# tmux by default
+[[ $TERM != "screen" ]] && exec tmux
+
+# Alias 
+
+alias mshwebfaction='mosh -i reyman64@159.253.136.56 -p 17416' 
+alias mshvps='mosh reyman@51.255.47.40'
+alias sshgeocites='ssh srey@193.55.107.5'
+
+setopt no_complete_aliases
+
   export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/reyman/Binaire"
 # export MANPATH="/usr/local/man:$MANPATH"
 
