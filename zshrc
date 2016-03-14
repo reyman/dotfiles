@@ -51,7 +51,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git tmux docker mosh pyenv)
 
 # User configuration
 
@@ -60,7 +60,8 @@ plugins=(git)
 
 # Alias 
 
-alias mshwebfaction='mosh -i reyman64@159.253.136.56 -p 17416' 
+alias mshwebfaction='mosh -i --server=/home/reyman64/bin/mosh-server reyman64@159.253.136.56 -p 17416'
+alias sshwebfaction='ssh reyman64@web504.webfaction.com' 
 alias mshvps='mosh reyman@51.255.47.40'
 alias sshgeocites='ssh srey@193.55.107.5'
 
@@ -96,4 +97,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export _JAVA_OPTIONS="-Xms1024m -Xmx2G -Xss256m -XX:MaxPermSize=4G"
+alias psudo='sudo env PATH="$PATH"'
+
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+export PATH=/usr/local/texlive/2015/bin/x86_64-linux:$PATH
+export PATH=$HOME/.rbenv/bin:$PATH
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+eval "$(rbenv init -)"
+
+
+export _JAVA_OPTIONS="-Xms1024m -Xmx2G -Xss256m"
