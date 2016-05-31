@@ -64,6 +64,8 @@ alias mshwebfaction='mosh -i --server=/home/reyman64/bin/mosh-server reyman64@15
 alias sshwebfaction='ssh reyman64@web504.webfaction.com' 
 alias mshvps='mosh reyman@51.255.47.40'
 alias sshgeocites='ssh srey@193.55.107.5'
+alias mshzebulon='mosh --server=LD_LIBRARY_PATH="/iscpif/users/rey/lib /iscpif/users/rey/bin/mosh-server" rey@zebulon.iscpif.fr'
+alias msh2zebulon='mosh rey@zebulon.iscpif.fr'
 
 setopt no_complete_aliases
 
@@ -110,3 +112,8 @@ eval "$(rbenv init -)"
 
 
 export _JAVA_OPTIONS="-Xms1024m -Xmx2G -Xss256m"
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
+
+# added by travis gem
+[ -f /home/reyman/.travis/travis.sh ] && source /home/reyman/.travis/travis.sh
